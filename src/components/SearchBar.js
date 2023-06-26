@@ -1,22 +1,15 @@
-// src/components/Searchbar.tsx
-import { SearchOutlined } from "@mui/icons-material";
+import  React,{memo} from 'react';
 import {
   Button,
   Divider,
-  IconButton,
   InputBase,
   Paper,
 } from "@mui/material";
-import { useState } from "react";
 
 
 
-const Searchbar = (props) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const onSubmit=(searchTerm)=>{
-    console.log(searchTerm);
-  }
-
+const Searchbar = ({setSearchGif,searchGif,getData}) => {
+ 
   return (
     // We use the Paper component since it already contains the style that we want.
     <Paper
@@ -32,7 +25,8 @@ const Searchbar = (props) => {
       }}
       onSubmit={(e) => {
         e.preventDefault();
-        onSubmit((e.target.value));
+        // setSearchGif(e.target.value);
+        getData();
       }}
     >
       {/* Input base contains the fewest styles possible so it's perfect for creating custom components like these */}
@@ -40,12 +34,11 @@ const Searchbar = (props) => {
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search..."
         inputProps={{ "aria-label": "search" }}
-        value={searchTerm}
+        value={searchGif}
         onChange={(e) => {
           console.log(e.target.value);
-          setSearchTerm(e.target.value);
+          setSearchGif(e.target.value);
         }}
-        {...props.inputProps}
       />
       <Divider sx={{ height: 28, mx: 0.5 }} orientation="vertical" />
       <Button type="submit" variant="contained" className="btn">
@@ -54,4 +47,4 @@ const Searchbar = (props) => {
     </Paper>
   );
 };
-export default Searchbar;
+export default memo(Searchbar);

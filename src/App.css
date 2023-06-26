@@ -9,3 +9,22 @@
   justify-content: center;
   color: white;
 }
+
+img{
+ width:-webkit-fill-available
+}
+
+.image-gif{
+  width: 150px;
+  height: 150px;
+}
+.image-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.gif-container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
