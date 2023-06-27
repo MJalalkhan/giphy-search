@@ -10,12 +10,17 @@ const Home = () => {
     return new URLSearchParams(useLocation().search);
   };
   const queryParams = useQuery();
-  const queryParam = queryParams.get("query");
+  const queryParam = queryParams.get("q");
   const [searchGif, setSearchGif] = useState(queryParam?queryParam :"");
   const navigate = useNavigate();
  
   const getData = () => {
-    navigate(`/search/?query=${searchGif}`);
+    if(searchGif!==""){
+      navigate(`/search/?q=${searchGif}`);
+    }else{
+      alert("plz enter gif name")
+    }
+    
   };
   return (
     <div>

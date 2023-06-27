@@ -8,7 +8,7 @@ const Search = () => {
     return new URLSearchParams(useLocation().search);
   };
   const queryParams = useQuery();
-  const queryParam = queryParams.get("query");
+  const queryParam = queryParams.get("q");
   const [gifList, setGifList] = useState([]);
   const [pages, setPages] = useState(1);
   const [limit] = useState(20);
