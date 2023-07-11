@@ -35,6 +35,10 @@ const Searchbar: FC<SearchbarProps> = ({ setSearchGif, searchGif, getData }) => 
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchGif(e.target.value);
+    if(e.target.value === "") {
+      setSearchGif("")
+      navigate("/");
+    }
   };
   const handleResetSearch = () => {
     console.log('Reset search')
