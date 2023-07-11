@@ -44,7 +44,7 @@ const Search = () => {
   return (
     <>
       <Container>
-      {gifList.length > 0 && (
+      {gifList.length > 0 ? (
         <>
           <div className="gif-container">
             {gifList.map((item) => (
@@ -58,7 +58,11 @@ const Search = () => {
             )}
           </div>
           </>
-      )}
+      ):
+      <h3 style={{textAlign:"center"}}>
+        No Data Found.Please Enter Valid Name...
+      </h3>
+      }
       </Container>
     </>
   );
