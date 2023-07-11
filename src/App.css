@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.header{
+.header {
   background-color: #1070d9;
   padding: 5px;
   display: flex;
@@ -10,21 +10,32 @@
   color: white;
 }
 
-img{
- width:-webkit-fill-available
+img {
+  width: -webkit-fill-available
 }
 
-.image-gif{
+.image-gif {
   width: 150px;
   height: 150px;
 }
-.image-wrapper{
+
+.image-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.gif-container{
-  display:flex;
+.gif-container {
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 14px 0;
+  position: sticky;
+  /* bottom: 30 */
 }
