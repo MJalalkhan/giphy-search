@@ -41,7 +41,6 @@ const Searchbar: FC<SearchbarProps> = ({ setSearchGif, searchGif, getData }) => 
     }
   };
   const handleResetSearch = () => {
-    console.log('Reset search')
     if(searchGif !== "") {
       setSearchGif("")
       navigate("/");
