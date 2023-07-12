@@ -1,24 +1,21 @@
 import { Pagination } from "@mui/material";
-import React, { memo } from "react";
+import React, { FC, memo } from "react";
 
-const BasicPagination = ({ setPage, numberOfPages}) => {
-  const handlePage = (page) => {
+interface BasicPaginationProps {
+  setPage: (page: number) => void;
+  numberOfPages: number;
+}
+
+const BasicPagination: FC<BasicPaginationProps> = ({ setPage, numberOfPages }) => {
+  const handlePage = (page: number) => {
     setPage(page);
     // console.log(page);
     window.scroll(0, 0);
   };
+
   return (
     <>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: 14,
-          position:'sticky',
-          bottom:30
-        }}
-      >
+      <div className="pagination">
         <Pagination
           count={numberOfPages}
           color="primary"
